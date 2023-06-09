@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KYOSKE</title>
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="cart.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="containerP">
+            <a href="#" class="logo">KYOSKE</a>
+            <nav class="nav">
+                <a href="#" class="nav-btn">Shop</a>
+                <a href="#" class="nav-btn">About</a>
+                <a href="#" class="nav-btn">Look Collection</a>
+                <a href="#" class="nav-btn">Visit Us</a>
+                <a href="#"><img class="bag" src="imgs/bag.svg" alt=""></a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="cadastrar-btn-div">
+            <a href="" class="cadastrar-btn">+ Cadastrar novo produto</a>
+        </div>
+        <div class="modal" style="display: flex; justify-content: center; margin-bottom: 20px;">
+            <form action=""
+                style="display: flex; flex-direction: column; width: 280px; justify-content: center; box-sizing: border-box;">
+                <label for="title">Título do produto</label>
+                <input type="text" id="title" required>
+                <label for="valor">Valor do produto</label>
+                <input type="number" name="valor" id="valor" required>
+                <label for="foto" class="custom-file-upload">Foto do produto</label>
+                <input type="file" name="foto" id="foto" accept="image/*" required>
+                <button type="submit" id="btn-cadastrar">Cadastrar</button>
+            </form>
+        </div>
+        <h1 class="page-title">Produtos</h1>
+        <section class="produtos">
+            <div class="produto-container shop-item">
+                <span class="shop-item-title">Calça</span>
+                <div class="div-img">
+                    <img class="shop-item-image" src="imgs/calca.jpg" alt="Calça">
+                </div>
+                <div class="info shop-item-details">
+                    <span class="shop-item-price">R$ 89,99</span>
+                    <button type="button" class="shop-item-button">+add Carrinho</button>
+                </div>
+            </div>
+            <div class="produto-container shop-item">
+                <span class="shop-item-title">Camisa</span>
+                <div class="div-img">
+                    <img class="shop-item-image" src="imgs/camisa.jpg" alt="Calça">
+                </div>
+                <div class="info shop-item-details">
+                    <span class="shop-item-price">R$ 55,99</span>
+                    <button type="button" class="shop-item-button">+add Carrinho</button>
+                </div>
+            </div>
+            <div class="produto-container shop-item">
+                <span class="shop-item-title">Cinto</span>
+                <div class="div-img">
+                    <img class="shop-item-image" src="imgs/cinto.jpg" alt="Calça">
+                </div>
+                <div class="info shop-item-details">
+                    <span class="shop-item-price">R$ 26,99</span>
+                    <button type="button" class="shop-item-button">+add Carrinho</button>
+                </div>
+            </div>
+            <div class="produto-container shop-item">
+                <span class="shop-item-title">jaqueta</span>
+                <div class="div-img">
+                    <img class="shop-item-image" src="imgs/jaqueta.jpg" alt="Calça">
+                </div>
+                <div class="info shop-item-details">
+                    <span class="shop-item-price">R$ 250,99</span>
+                    <button type="button" class="shop-item-button">+add Carrinho</button>
+                </div>
+            </div>
+            <div class="produto-container shop-item">
+                <span class="shop-item-title">mochila</span>
+                <div class="div-img">
+                    <img class="shop-item-image" src="imgs/mochila.jpg" alt="Calça">
+                </div>
+                <div class="info shop-item-details">
+                    <span class="shop-item-price">R$ 122,99</span>
+                    <button type="button" class="shop-item-button">+add Carrinho</button>
+                </div>
+            </div>
+            <div class="produto-container shop-item">
+                <span class="shop-item-title">toca</span>
+                <div class="div-img">
+                    <img class="shop-item-image" src="imgs/toca.jpg" alt="Calça">
+                </div>
+                <div class="info shop-item-details">
+                    <span class="shop-item-price">R$ 18,99</span>
+                    <button type="button" class="shop-item-button">+add Carrinho</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="container content-section">
+            <h2 class="page-title">Carrinho</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">Item</span>
+                <span class="cart-price cart-header cart-column">Preço</span>
+                <span class="cart-quantity c art-header cart-column">Quantidade:</span>
+            </div>
+            <div class="cart-items">
+                <div class="cart-row">
+                    <div class="cart-item cart-column">
+                        <img class="cart-item-image" src="${item.produto.imageSrc}" alt="" width="100" height="100">
+                        <span class="cart-item-title">${item.produto.title}</span>
+                    </div>
+                    <span class="cart-price cart-column">${item.produto.price}</span>
+                    <div class="cart-quantity cart-column">
+                        <input class="cart-quantity-input" type="number" name="" id="" value="${item.quantidade}">
+                        <button class="btn btn-danger cart-quantity-button" type="button">Remover</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">R$0</span>
+            </div>
+            <button class="btn btn-primary 
+            btn-purchase" type="button">Comprar</button>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#" class="footer-link">Shop</a>
+                <a href="#" class="footer-link">About</a>
+                <a href="#" class="footer-link">Look Collection</a>
+                <a href="#" class="footer-link">Visit Us</a>
+            </div>
+            <p class="footer-text">© 2023 Cherlau Prado. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
